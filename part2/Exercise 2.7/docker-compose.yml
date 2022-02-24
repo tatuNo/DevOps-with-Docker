@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: kurkkumopo-frontend
+    container_name: km-front
+    ports:
+     - 3000:3000
+  backend:
+    image: kurkkumopo-backend
+    ports:
+     - 5000:5000
+    volumes:
+     - model:/src/model
+    container_name: km-back
+  training:
+    image: kurkkumopo-training
+    volumes:
+     - model:/src/model
+     - images:/src/imgs
+    container_name: km-train
+
+volumes:
+  model:
+  images:

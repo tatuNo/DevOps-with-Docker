@@ -1,0 +1,3 @@
+- Removed backend & frontend ports from docker-compose
+- Frontend Dockerfile changed REACT_APP_BACKEND_URL=http://localhost/api
+- Backend Dockerfile changed REQUEST_ORIGIN=http://localhost

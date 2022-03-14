@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# $1 repository url, $2 image name, $3 docker username
+
+git clone $1 $2
+
+cd $2
+
+rm -rf .git
+
+docker build . -t $2
+
+docker login -u $3
+
+docker tag $2 $3/$2
+
+docker push $3/$2

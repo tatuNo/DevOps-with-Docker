@@ -2,7 +2,8 @@
 
 # Before 1.1GB
 
-```FROM node:12.16.2
+```
+FROM node:12.16.2
 
 WORKDIR /usr/src/app
 
@@ -20,7 +21,8 @@ CMD ["serve", "-s", "-l", "3000", "build"]
 
 # After 99.8MB
 
-```FROM node:12.16.2 as build
+```
+FROM node:12.16.2 as build
 
 WORKDIR /usr/src/app
 
